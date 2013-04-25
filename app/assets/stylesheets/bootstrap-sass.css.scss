@@ -1,0 +1,11 @@
+/* bootstrap-sass の変数を上書き */
+$navbarText:                  #ffffff;
+$navbarBrandColor:            #ffffff;
+$navbarLinkColor:             #ffffff;
+$navbarLinkColorActive:       #ffffff;
+$navbarLinkColorHover:        #ffffff;
+$navbarBackground:            #673412;
+$navbarBackgroundHighlight:   #3a1703;
+$navbarLinkBackgroundActive:  #673412;
+
+@import "bootstrap";
