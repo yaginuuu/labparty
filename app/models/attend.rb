@@ -1,5 +1,3 @@
 class Attend < ActiveRecord::Base
-	belongs_to :user
-
-	attr_accessible :attend, :party_id, :user_id
+	attr_accessible :attend, :user_id, :party_id
 end

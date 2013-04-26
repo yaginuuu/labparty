@@ -1,4 +1,8 @@
 Labparty::Application.routes.draw do
+  resources :attends
+
+  resources :parties
+
   get "/auth/:provider/callback" => "sessions#callback"
   get "/auth/failure" => "sessions#failure"
   get "/logout" => "sessions#destroy", :as => :logout

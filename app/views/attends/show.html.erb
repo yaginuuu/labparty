@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<%= debug @attend %>
+<p>
+  <strong>Attend:</strong>
+  <%= @attend.attend %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @attend.user_id %>
+</p>
+
+<p>
+  <strong>Party:</strong>
+  <%= @attend.party_id %>
+</p>
+
+
+<%= link_to 'ホーム', home_index_path %>
