@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20130426122126) do
 
-  create_table "attends", force: true do |t|
+  create_table "members", force: true do |t|
     t.integer  "attend"
     t.integer  "user_id"
     t.integer  "party_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20130426122126) do
 
   create_table "parties", force: true do |t|
     t.string   "name"
+    t.string   "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

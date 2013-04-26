@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<%= debug @member %>
+<p>
+  <strong>Member:</strong>
+  <%= @member.attend %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @member.user_id %>
+</p>
+
+<p>
+  <strong>Party:</strong>
+  <%= @member.party_id %>
+</p>
+
+
+<%= link_to 'ホーム', parties_path %>

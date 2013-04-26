@@ -5,31 +5,12 @@
   <%= @party.name %>
 </p>
 
-<%= form_for(@attend) do |f| %>
-  <% if @attend.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@attend.errors.count, "error") %> prohibited this attend from being saved:</h2>
 
-      <ul>
-      <% @attend.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%= debug current_user.id %>
-  <%= debug @party.id %>
-
-  <div class="field">
-    <%= f.label :出席しますか？ %>
-    <%= f.select(:attend, {'◯' => 1, '△' => 2, '×' => 3}) %>
-  </div>
-
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.hidden_field :party_id, :value => @party.id %>
-  <div class="actions">
-    <%= f.submit '登録' %>
-  </div>
+<% @party.users.each do |user| %>
+	<%= image_tag user.image %>
+	<%= user.screen_name %>
+	<br>
 <% end %>
+
+<%= render 'members/form' %>
 <%= link_to 'ホーム', parties_path %>

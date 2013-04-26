@@ -10,7 +10,8 @@ class PartiesController < ApplicationController
   # GET /parties/1
   # GET /parties/1.json
   def show
-    @attend = Attend.new
+    @member = Member.new
+    # @parties = Party.where(:party_id => @party.id)
   end
 
   # GET /parties/new
@@ -30,7 +31,7 @@ class PartiesController < ApplicationController
     respond_to do |format|
       if @party.save
         format.html { redirect_to @party, notice: '新しいPartyを追加しました' }
-        format.json { render action: 'show', status: :created, location: @party }
+        format.json { render action: 'index', status: :created, location: @party }
       else
         format.html { render action: 'new' }
         format.json { render json: @party.errors, status: :unprocessable_entity }

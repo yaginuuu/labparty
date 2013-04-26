@@ -1,5 +1,5 @@
 Labparty::Application.routes.draw do
-  resources :attends
+  resources :members
 
   resources :parties
 

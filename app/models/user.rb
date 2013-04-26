@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-	has_many :attend
+	has_many :members
+  has_many :parties, :through => :members
 	#---------------------------#
   # self.create_with_omniauth #
   #---------------------------#
