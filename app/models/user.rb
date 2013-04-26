@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	has_many :attend
 	#---------------------------#
   # self.create_with_omniauth #
   #---------------------------#

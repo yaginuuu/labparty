@@ -1,7 +1,10 @@
 class HomeController < ApplicationController
 	def index
-		@tl = home_timeline_from_twitter
+		# @tl = home_timeline_from_twitter
+		# @attends = Attend.all
 	end
+
+	
 
 	private
 
@@ -26,4 +29,5 @@ class HomeController < ApplicationController
       }
     }
   end
+
 end
