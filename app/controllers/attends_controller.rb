@@ -10,10 +10,12 @@ class AttendsController < ApplicationController
   # GET /attends/1
   # GET /attends/1.json
   def show
+    @attend = Attend.new
   end
 
   # GET /attends/new
   def new
+    # @party = Party.find(params[:id])
     @attend = Attend.new
   end
 

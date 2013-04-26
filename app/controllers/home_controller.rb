@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 	def index
 		# @tl = home_timeline_from_twitter
-		# @attends = Attend.all
+		@parties = Party.all
 	end
 
 	

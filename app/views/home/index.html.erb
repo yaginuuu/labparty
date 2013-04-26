@@ -1,4 +1,10 @@
 # coding: utf-8
+
+<% @parties.each do |party| %>
+	<li id="party_<% party.id %>">
+		<%= link_to party.name, attend_path(party) %>
+	</li>
+<% end %>
 <%= link_to '新しいPartyを登録する', :new_party %>
 <br>
 <%= link_to '出席情報を登録する', :new_attend %>
