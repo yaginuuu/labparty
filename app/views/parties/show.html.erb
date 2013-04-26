@@ -1,9 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>宴会名:</strong>
   <%= @party.name %>
 </p>
 
+<%= form_for(@attend) do |f| %>
+  <% if @attend.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attend.errors.count, "error") %> prohibited this attend from being saved:</h2>
 
-<%= link_to 'ホーム', home_index_path %>
+      <ul>
+      <% @attend.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= debug current_user.id %>
+  <%= debug @party.id %>
+
+  <div class="field">
+    <%= f.label :出席しますか？ %>
+    <%= f.select(:attend, {'◯' => 1, '△' => 2, '×' => 3}) %>
+  </div>
+
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :party_id, :value => @party.id %>
+  <div class="actions">
+    <%= f.submit '登録' %>
+  </div>
+<% end %>
+<%= link_to 'ホーム', parties_path %>
